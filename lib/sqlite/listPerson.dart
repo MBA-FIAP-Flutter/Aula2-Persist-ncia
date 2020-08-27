@@ -102,11 +102,36 @@ class _ListPersonState extends State<ListPerson> {
           title: Text(personsList[index].firstName),
           subtitle: Text(personsList[index].lastName),
           onLongPress: (){
-
+            deletePerson(index);
           },
         ),
       ),
     );
+  }
+
+  insertPerson(Person person) {
+    _database.insert(
+      'person',
+      person.toMap(),
+      conflictAlgorithm: ConflictAlgorithm.replace,
+    ).then((value) {
+      person.id = value;
+      setState(() {
+        personsList.add(person);
+      });
+    });
+  }
+
+  deletePerson(int index) {
+    _database.delete(
+      'person',//table
+      where: "id = ?", //where "id = ?" - sql injection - hacker/crackers usam para zoar bancos
+      whereArgs: [personsList[index].id],//argumentos do where
+    ).then((value) {
+      setState(() {
+        personsList.removeAt(index);
+      });
+    });
   }
 
 }
