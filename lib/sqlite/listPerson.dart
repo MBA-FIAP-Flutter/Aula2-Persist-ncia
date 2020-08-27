@@ -45,6 +45,23 @@ class _ListPersonState extends State<ListPerson> {
     });
   }
 
+  readAll() async {
+    //quando encontramos a palavra reservada await, estamos em uma função
+    //assíncrona
+    //sempre que uma linha usa await, a sua função pai precisa ter o async
+    final List<Map<String, dynamic>> maps = await _database.query('person');
+
+    personsList = List.generate(maps.length, (i) {
+      return Person(
+        id: maps[i]['id'],
+        firstName: maps[i]['firstName'],
+        lastName: maps[i]['lastName'],
+      );
+    });
+
+    setState(() {});
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
