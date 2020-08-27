@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_fiap_aula_2_bd/home.dart';
+import 'package:flutter_fiap_aula_2_bd/sqlite/listPerson.dart';
 
 void main() {
   runApp(MyApp());
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
         // When navigating to the "/" route, build the FirstScreen widget.
         '/': (context) => Home(),
         // When navigating to the "/second" route, build the SecondScreen widget.
-        //'/sqlite': (context) => ListPersons(),
+        '/sqlite': (context) => ListPerson(),
         //'/nosql': (context) => ListBooks(),
         //'/firebase': (context) => ListCars(),
       },

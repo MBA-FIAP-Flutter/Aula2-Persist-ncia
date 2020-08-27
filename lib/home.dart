@@ -16,7 +16,9 @@ class Home extends StatelessWidget {
             title: Text("SQLite"),
             subtitle: Text("Lista de Pessoas"),
             trailing: Icon(Icons.navigate_next),
-            onTap: (){},
+            onTap: (){
+              Navigator.pushNamed(context, "/sqlite");
+            },
           ),
           Divider(
             height: 1,
