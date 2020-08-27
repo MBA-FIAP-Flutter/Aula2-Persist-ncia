@@ -3,6 +3,8 @@ import 'package:flutter_fiap_aula_2_bd/sqlite/model/person.dart';
 import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
 
+import 'addPerson.dart';
+
 class ListPerson extends StatefulWidget {
   @override
   _ListPersonState createState() => _ListPersonState();
@@ -71,7 +73,16 @@ class _ListPersonState extends State<ListPerson> {
           if (_database != null) IconButton(
             icon: Icon(Icons.add),
             onPressed: (){
-
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => AddPerson()
+                )
+              ).then((newPerson) {
+                if (newPerson != null){
+                  insertPerson(newPerson);
+                }
+              });
             },
           )
         ],
