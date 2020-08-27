@@ -1,9 +1,49 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_fiap_aula_2_bd/sqlite/model/person.dart';
+import 'package:path/path.dart';
+import 'package:sqflite/sqflite.dart';
 
-class ListPerson extends StatelessWidget {
+class ListPerson extends StatefulWidget {
+  @override
+  _ListPersonState createState() => _ListPersonState();
+}
 
+//StatelessWidget ou State pra ter acesso a função build
+class _ListPersonState extends State<ListPerson> {
+
+  Database _database;
   List<Person> personsList = List<Person>();
+
+  //ele faz parte do ciclo de vida do state - StatefulWidget
+  @override
+  void initState() {
+    super.initState();
+
+    //como o ciclo de todo State começa no initState
+    //é neste ponto que nós camos abrir a conexão com o banco de dados
+    getDatabase();
+  }
+
+  getDatabase() async {
+    //SQLITE - usando o mais crú possível
+    //Floor - Room
+    openDatabase(
+        join(await getDatabasesPath(), 'person_database.db'),
+        onCreate: (db, version)
+        {
+          return db.execute(
+            "CREATE TABLE person(id INTEGER PRIMARY KEY, firstName TEXT, lastName TEXT)",
+          );
+        },
+        version: 1
+    ).then((db) {
+      setState(() {
+        _database = db;
+      });
+
+      readAll();
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +51,7 @@ class ListPerson extends StatelessWidget {
       appBar: AppBar(
         title: Text("Pessoas"),
         actions: <Widget>[
-          IconButton(
+          if (_database != null) IconButton(
             icon: Icon(Icons.add),
             onPressed: (){
 
@@ -53,3 +93,5 @@ class ListPerson extends StatelessWidget {
   }
 
 }
+
+
