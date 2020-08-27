@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_fiap_aula_2_bd/util/customWidgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class Home extends StatelessWidget {
@@ -11,21 +12,29 @@ class Home extends StatelessWidget {
       body: ListView(
         children: [
           ListTile(
-            leading: SvgPicture.asset("images/sqlite-icon.svg"),
+            leading: buildSvgIcon("images/sqlite-icon.svg"),
             title: Text("SQLite"),
             subtitle: Text("Lista de Pessoas"),
             trailing: Icon(Icons.navigate_next),
             onTap: (){},
           ),
+          Divider(
+            height: 1,
+            color: Colors.black54,
+          ),
           ListTile(
-            leading: SvgPicture.asset("images/db.svg"),
+            leading: buildSvgIcon("images/db.svg"),
             title: Text("Floor"),
             subtitle: Text("Lista de Livros"),
             trailing: Icon(Icons.navigate_next),
             onTap: (){},
           ),
+          Divider(
+            height: 1,
+            color: Colors.black54,
+          ),
           ListTile(
-            leading: SvgPicture.asset("images/firebase-icon.svg"),
+            leading: buildSvgIcon("images/firebase-icon.svg"),
             title: Text("Firebase"),
             subtitle: Text("Lista de Carros"),
             trailing: Icon(Icons.navigate_next),
@@ -35,4 +44,6 @@ class Home extends StatelessWidget {
       ),
     );
   }
+
+
 }
