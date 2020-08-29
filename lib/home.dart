@@ -29,7 +29,9 @@ class Home extends StatelessWidget {
             title: Text("Floor"),
             subtitle: Text("Lista de Livros"),
             trailing: Icon(Icons.navigate_next),
-            onTap: (){},
+            onTap: (){
+              Navigator.pushNamed(context, "/nosql");
+            },
           ),
           Divider(
             height: 1,

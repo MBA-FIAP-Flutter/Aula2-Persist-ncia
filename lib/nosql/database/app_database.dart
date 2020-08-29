@@ -1,5 +1,4 @@
 import 'dart:async';
-
 import 'package:floor/floor.dart';
 import 'package:flutter_fiap_aula_2_bd/nosql/dao/book_dao.dart';
 import 'package:flutter_fiap_aula_2_bd/nosql/model/book.dart';
