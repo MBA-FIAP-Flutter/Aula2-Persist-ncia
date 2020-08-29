@@ -7,6 +7,7 @@ class AddPerson extends StatelessWidget {
 
   final TextEditingController _firstNameController = TextEditingController();
   final TextEditingController _lastNameController = TextEditingController();
+  final TextEditingController _addressController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -53,14 +54,28 @@ class AddPerson extends StatelessWidget {
                   return null;
                 },
               ),
+              TextFormField(
+                controller: _addressController,
+                decoration: InputDecoration(
+                    hintText: "Endereço",
+                    labelText: "Endereço"
+                ),
+                validator: (value) {
+                  if (value.isEmpty) {
+                    return 'Insira o endereço da pessoa';
+                  }
+                  return null;
+                },
+              ),
               Padding(
                 padding: EdgeInsets.symmetric(vertical: 16.0),
                 child: RaisedButton(
                   onPressed: () {
                     if (_formKey.currentState.validate()) {
                       Person person = Person(
-                          firstName: _firstNameController.text,
-                          lastName: _lastNameController.text
+                        firstName: _firstNameController.text,
+                        lastName: _lastNameController.text,
+                        address: _addressController.text
                       );
                       Navigator.pop(context, person);
                     }

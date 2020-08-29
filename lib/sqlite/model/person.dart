@@ -2,8 +2,9 @@ class Person {
   int id;
   final String firstName;
   final String lastName;
+  final String address;
 
-  Person({this.id, this.firstName, this.lastName});
+  Person({this.id, this.firstName, this.lastName, this.address});
 
   //no Flutter.. vc faz parser de json-objetos e de objetos-json
   //usando uma instância de Map
@@ -15,6 +16,7 @@ class Person {
       'id': id,
       'firstName': firstName,
       'lastName': lastName,
+      'address': address,
     };
   }
 }

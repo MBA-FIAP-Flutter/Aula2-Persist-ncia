@@ -34,7 +34,7 @@ class _ListPersonState extends State<ListPerson> {
         onCreate: (db, version)
         {
           return db.execute(
-            "CREATE TABLE person(id INTEGER PRIMARY KEY, firstName TEXT, lastName TEXT)",
+            "CREATE TABLE person(id INTEGER PRIMARY KEY, firstName TEXT, lastName TEXT, address TEXT)",
           );
         },
         version: 1
@@ -111,7 +111,7 @@ class _ListPersonState extends State<ListPerson> {
         child: ListTile(
           leading: Text("${personsList[index].id}"),
           title: Text(personsList[index].firstName),
-          subtitle: Text(personsList[index].lastName),
+          subtitle: Text("${personsList[index].lastName}, ${personsList[index].address}"),
           onLongPress: (){
             deletePerson(index);
           },
