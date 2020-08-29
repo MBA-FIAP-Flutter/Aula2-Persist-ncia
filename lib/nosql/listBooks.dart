@@ -2,6 +2,7 @@ import 'package:floor/floor.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_fiap_aula_2_bd/nosql/addBook.dart';
 import 'package:flutter_fiap_aula_2_bd/nosql/dao/book_dao.dart';
+import 'package:flutter_fiap_aula_2_bd/nosql/database/app_database.dart';
 import 'package:flutter_fiap_aula_2_bd/nosql/model/book.dart';
 
 class ListBooks extends StatefulWidget {
