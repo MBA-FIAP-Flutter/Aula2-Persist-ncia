@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "693710181573",
+    "firebase_url": "https://fiapflutter-eb29d.firebaseio.com",
+    "project_id": "fiapflutter-eb29d",
+    "storage_bucket": "fiapflutter-eb29d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:693710181573:android:1fdd83d7658d7bc827ccac",
+        "android_client_info": {
+          "package_name": "ogliari.flutter.flutter_fiap_aula_2_bd"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "693710181573-dpkmcqtrk018h5g8sp118mih71omedkb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCP5vXR0vh2YOR72nMA6TcDEyjatWT_kyQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "693710181573-dpkmcqtrk018h5g8sp118mih71omedkb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
