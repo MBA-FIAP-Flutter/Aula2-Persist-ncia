@@ -252,7 +252,7 @@ packages:
       name: floor
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.13.0"
+    version: "0.14.0"
   floor_annotation:
     dependency: transitive
     description:
@@ -266,7 +266,7 @@ packages:
       name: floor_generator
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.13.0"
+    version: "0.14.0"
   flutter:
     dependency: "direct main"
     description: flutter
